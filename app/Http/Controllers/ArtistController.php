@@ -64,6 +64,11 @@ class ArtistController extends Controller
     public function edit(string $id)
     {
         //
+        $artist = Artist::find($id);
+        return view('artist.edit',[
+            'artist' => $artist,
+        ]);
+
     }
 
     /**
@@ -74,7 +79,29 @@ class ArtistController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //Validation des données du formulaire
+        $validated = $request->validate([
+            'firstname' => 'required|max:60',
+            'lastname' => 'required|max:60',
+        ]);
+
+        //Le formulaire a été validé, nous récupérons l’artiste à modifier
+        $artist = Artist::find($id);
+
+	//    //Mise à jour des données modifiées et sauvegarde dans la base de données
+    //    $artist->update($validated);
+        
+        //Mise à jour des données modifiées et sauvegarde dans la base de données
+        $artist->firstname = $validated['firstname'];
+        $artist->lastname = $validated['lastname'];
+
+	   $artist->save();
+
+
+        return view('artist.show',[
+            'artist' => $artist,
+        ]);
+
     }
 
     /**
