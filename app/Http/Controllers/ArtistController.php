@@ -124,10 +124,22 @@ class ArtistController extends Controller
     /**
      * Remove the specified resource from storage.
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(string $id)
+    public function destroy( $id)
     {
         //
+        // $artist = Artist::find($id);
+
+        // if($artist) {
+        //     $artist->delete();
+        // }
+
+        // return redirect()->route('artist.index');
+        
+        Artist::destroy($id);
+
+        return redirect()->route('artist.index');
+
     }
 }
