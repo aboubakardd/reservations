@@ -23,11 +23,11 @@ class UserSeeder extends Seeder
         //Define data
         $users = [
             [
-                'login'=>'bob',
-                'firstname'=>'Bob',
-                'lastname'=>'Sull',
-                'email'=>'bob@sull.com',
-                'password'=>'12345678',
+                'login'=>'abou',
+                'firstname'=>'Abou',
+                'lastname'=>'test',
+                'email'=>'aboutest@gmail.com',
+                'password'=>'abou1234',
                 'langue'=>'fr',
                 'created_at'=>'',
                 'role'=>'admin',
