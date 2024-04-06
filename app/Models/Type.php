@@ -6,21 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Artist extends Model
+class Type extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'firstname', 
-        'lastname',
-    ];
+    protected $fillable = ['type'];
 
-    protected $tables = ['artists'];
+    protected $tables = ['types'];
 
     public $timestamps = false;
 
-    public function types() : BelongsToMany
+    public function artists() : BelongsToMany
     {
-        return $this->belongsToMany(Type::class);
+        return $this->belongsToMany(Artist::class);
     }
 }
