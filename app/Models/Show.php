@@ -10,6 +10,11 @@ class Show extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'title',
         'description',
@@ -19,8 +24,19 @@ class Show extends Model
         'price',
     ];
 
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+
     protected $tables = ['shows'];
 
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
     public $timestamps = false;
 
     /*
