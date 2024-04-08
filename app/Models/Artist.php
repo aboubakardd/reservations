@@ -17,7 +17,7 @@ class Artist extends Model
 
     protected $tables = ['artists'];
 
-    public $timestamps = false;
+    public $timestamps = false; 
 
     public function types() : BelongsToMany
     {
