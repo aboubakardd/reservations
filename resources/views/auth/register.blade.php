@@ -9,6 +9,27 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
+        <!-- login -->
+        <div class="mt-4">
+            <x-input-label for="login" :value="__('Login')" />
+            <x-text-input id="login" class="block mt-1 w-full" type="text" name="login" :value="old('login')" required autofocus autocomplete="login" />
+            <x-input-error :messages="$errors->get('login')" class="mt-2" />
+        </div>
+
+        <!-- lastname -->
+        <div class="mt-4">
+            <x-input-label for="lastname" :value="__('Lastname')" />
+            <x-text-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="lastname" /> 
+            <x-input-error :messages="$errors->get('lastname')" class="mt-2" />
+        </div>
+
+        <!-- language -->
+        <div class="mt-4">
+            <x-input-label for="langue" :value="__('Langue')" />
+            <x-text-input id="langue" class="block mt-1 w-full" type="text" name="langue" :value="old('langue')" required autofocus autocomplete="langue" /> 
+            <x-input-error :messages="$errors->get('langue')" class="mt-2" />
+        </div>
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
