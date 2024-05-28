@@ -75,5 +75,21 @@
         </p>
     </article>
 
+    <h2>Réserver des places</h2>
+    <form action="{{ route('reservation.store') }}" method="POST">
+        @csrf
+        <div>
+            <label for="start_date">Date de début:</label>
+            <input type="date" id="start_date" name="start_date" required>
+        </div>
+        <div>
+            <label for="end_date">Date de fin:</label>
+            <input type="date" id="end_date" name="end_date" required>
+        </div>
+        <div>
+            <button type="submit">Réserver</button>
+        </div>
+    </form>
+
     <nav><a href="{{ route('show.index') }}">Retour à l'index</a></nav>
 @endsection
